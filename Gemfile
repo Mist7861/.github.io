@@ -35,3 +35,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 #Extra added code for new site
 gem 'jekyll-dash', '~> 2'
+#trying to fix the ruby version error
+gem "jekyll-sass-converter", "~> 2.0"
