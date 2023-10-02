@@ -26,8 +26,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 show_excerpts: false # set to true to show excerpts on the homepage
-baseurl: "/_site" # the subpath of your site, e.g. /blog
-<link rel="stylesheet" href="{{ "/assets/css/main.css, " | prepend: site.baseurl }}">
+baseurl: /PROJECT # the subpath of your site, e.g. /blog
+url: http://Mist7861.github.io" 
+
 # jekyll-paginate
 paginate: 1
 paginate_path: "/blog/page:num/"
