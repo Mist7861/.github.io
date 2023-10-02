@@ -84,7 +84,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  bundler (~> 2.2.28)
+  bundler (~> 2.4.20)
   jekyll-dash!
   jekyll-tagging
   kramdown-parser-gfm
