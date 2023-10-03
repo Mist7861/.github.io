@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 
+title: Mist
 author: Haroon
-email: 
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi! I'm Haroon, I have an interest in IT-Related matters, especially things in relation to Cyber Security & Web Development.
   I will be showcasing anything I find that may interest others on this blog page...Enjoy!
