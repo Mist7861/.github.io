@@ -29,7 +29,7 @@ baseurl: /.github.io # the subpath of your site, e.g. /blog
 url: http://Mist7861.github.io 
 
 # jekyll-paginate
-paginate: 1
+paginate: 20
 paginate_path: "/blog/page:num/"
 
 # jekyll-tagging (optional)
