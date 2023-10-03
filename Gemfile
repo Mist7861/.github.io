@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.3.2"
 gem "liquid-md5"
-gem "jekyll-tagging"
+#gem "jekyll-tagging"
 gem "kramdown-parser-gfm"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
