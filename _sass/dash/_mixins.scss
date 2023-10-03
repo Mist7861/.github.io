@@ -5,10 +5,10 @@
   font-variant: normal;
   text-rendering: auto;
   font-weight: 900;
-
-  display: none;
   -webkit-font-smoothing: antialiased;
 }
+
+$theme-map: null;
 
 @mixin themed() {
   @each $theme, $map in $themes {

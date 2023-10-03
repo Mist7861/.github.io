@@ -4,6 +4,8 @@
 
 @import "dash";
 
-.link{
-  font-size: 5px;
+.post-excerpt {
+    @include themed() {
+        color: t('foreground-color');
+    }
 }
