@@ -31,9 +31,11 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+#gem "http_parser.rb", "~> 0.6.0-java", :platforms => [:jruby]
 
 #Extra added code for new site
 gem 'jekyll-dash', '~> 2'
 #trying to fix the ruby version error
 gem "jekyll-sass-converter", "~> 2.0"
+#Error Fix
+gem "webrick", "~> 1.8"
