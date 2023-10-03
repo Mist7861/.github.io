@@ -23,7 +23,7 @@ author: Haroon
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi! I'm Haroon, I have an interest in IT-Related matters, especially things in relation to Cyber Security & Web Development.
-  I will be showcasing anything I find that may interest others on this blog page...Enjoy!
+  I will be showcasing anything I find that may interest myself & others on this blog page...Enjoy!
 show_excerpts: false # set to true to show excerpts on the homepage
 baseurl: /.github.io # the subpath of your site, e.g. /blog
 url: http://Mist7861.github.io 
