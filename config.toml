@@ -3,6 +3,8 @@ compile_sass = true
 title = "after-dark theme"
 description = "A robust, elegant dark theme"
 generate_feed = true
+theme = "after-dark"
+paginate_by = 5
 
 taxonomies = [
     {name = "categories", feed = true},
