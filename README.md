@@ -1,96 +1,87 @@
-# After Dark
+# after-dark
 
-[![Latest NPM version](https://flat.badgen.net/npm/v/after-dark)](https://www.npmjs.com/after-dark)
-[![Weekly downloads](https://flat.badgen.net/npm/dw/after-dark)](https://www.npmjs.com/after-dark)
-[![Minimum Hugo version](https://flat.badgen.net/badge/hugo/>=0.51/FF4088)](https://gohugo.io)
-[![AGPL licensed](https://img.shields.io/npm/l/after-dark.svg?style=flat-square&longCache=true)](https://codeberg.org/vhs/after-dark/src/branch/trunk/COPYING)
+![after-dark screenshot](https://github.com/getzola/after-dark/blob/master/screenshot.png?raw=true)
 
-## Highlights
+## Contents
 
-- **Developer Focused:** Cross-platform, 1 dependency, single-codebase.
-- **Incredibly Fast:** ~0.615s average build time and decisecond page loads.
-- **Privacy Aware:** No cookies, no trackers, no external requests.
-- **Securely Designed:** Source-level integrity checking and strict content security policy.
-- **Advanced Graphics:** BPG image support, PhotoSwipe support, aggressive lazy-loading.
-- **Easily Customized:** Override any theme template to compose your own views.
-- **Fuzzy Search:** Offline, automatic and no third-parties.
-- **Batteries Included**: Integrates with Gitea, Kubernetes, Traefik and Fathom Analytics.
-- **Extended Builds:** Add Sass support to your project and decrease built times.
-- **Detailed Docs:** Includes example documentation website written using After Dark.
+- [Installation](#installation)
+- [Options](#options)
+  - [Top menu](#top-menu)
+  - [Title](#title)
+  - [Author](#author)
 
-## Screenshot
+## Installation
+First download this theme to your `themes` directory:
 
-[![](https://codeberg.org/vhs/after-dark/raw/branch/trunk/docs/static/images/screenshots/after-dark-v6.15.0-homepage-fs8.png)](https://codeberg.org/vhs/after-dark)
+```bash
+cd themes
+git clone https://github.com/getzola/after-dark.git
+```
+and then enable it in your `config.toml`:
 
-## Requirements
-
-Hugo 0.51+ is the only requirement. ([Install Hugo](https://gohugo.io/getting-started/installing/)).
-
-### Installation
-
-The fastest installation method is to run the quick install script:
-
-```sh
-wget -qO - https://codeberg.org/vhs/after-dark/raw/branch/trunk/bin/install | sh
+```toml
+theme = "after-dark"
 ```
 
-Quick Install is ideal for first-time users and does not require use of git. Quick install will help you create and configure your site, install an example After Dark module, and generate a welcome post and online help documentation for offline use.
+This theme requires your index section (`content/_index.md`) to be paginated to work:
 
-By convention After Dark may also be used with an existing Hugo site by git cloning to or adding as a submodule:
-
-```sh
-hugo-site
-├── static
-└── themes
-    └── after-dark # git clone or submodule
+```toml
+paginate_by = 5
 ```
 
-See [Install a Single Theme](https://gohugo.io/themes/installing-and-using-themes/#install-a-single-theme) on the Hugo docs site for additional instructions.
+The posts should therefore be in directly under the `content` folder.
 
-After Dark releases are tagged in git and [packaged on NPM](https://www.npmjs.com/package/after-dark). Use the NPM package to integrate After Dark into existing workflows.
+The theme requires tags and categories taxonomies to be enabled in your `config.toml`:
 
-### Usage
-
-Run the online help server after installing for detailed instructions:
-
+```toml
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
 ```
-sh ./themes/after-dark/bin/help
+If you want to paginate taxonomies pages, you will need to overwrite the templates
+as it only works for non-paginated taxonomies by default.
+
+
+## Options
+
+### Top-menu
+Set a field in `extra` with a key of `after_dark_menu`:
+
+```toml
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "https://google.com", name = "Google"},
+]
 ```
 
-See the [Hugo docs](https://gohugo.io/documentation/) as well. There's also a [Hugo community forum](https://discourse.gohugo.io/) in case you get stuck.
+If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
+site URL.
 
-### Upgrading
+### Title
+The site title is shown on the homepage. As it might be different from the `<title>`
+element that the `title` field in the config represents, you can set the `after_dark_title`
+instead.
 
-Run the [Upgrade Script](https://vhs.codeberg.page/after-dark/feature/upgrade-script/) to check for updates and upgrade automatically:
+### Author
+You can set this on a per page basis or in the config file.
 
-```sh
-./themes/after-dark/bin/upgrade
+`config.toml`:
+```toml
+[extra]
+author = "John Smith"
+```
+In a page (wrap this in +++):
+```toml
+title = "..."
+date = 1970-01-01
+
+[extra]
+author = "John Smith"
 ```
 
-Upgrading replaces the file contents of the theme as a whole for security reasons. If you wish to modify the source please create a fork.
-
-### Verifying
-
-If installed or upgraded via script you may use the [Release Validator](https://vhs.codeberg.page/after-dark/validate/) to verify you're running a PGP-signed and SHA-verified release. Integrity is checked at the source level and may be performed offline. See [Release Hashes](https://vhs.codeberg.page/after-dark/feature/release-hashes/) for more info.
-
-## Credits
-
-Special thanks to エゴイスト for [hackcss](https://codeberg.org/vhs/mirrors/hack), Dan Klammer for the [bytesize icons](https://codeberg.org/vhs/mirrors/bytesize-icons) and Vincent Prouillet for the [Zola port](https://www.getzola.org/themes/after-dark/).
-
-## Rights
-
-After Dark - A retro dark theme for Hugo.<br>
-Copyright (C) 2019&nbsp;&nbsp;VHS &lt;vhsdev@tutanota.com&gt; (https://vhs.codeberg.page)
-
-After Dark is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-After Dark is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+## Original
+This template is based on the Hugo template https://git.habd.as/comfusion/after-dark
